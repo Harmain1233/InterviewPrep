@@ -1,0 +1,46 @@
+/**
+ * @param {string} str1
+ * @param {string} str2
+ * @return {string}
+ */
+var gcdOfStrings = function(str1, str2) {
+    // If str2 is empty, return str1
+    if (str2 === "") {
+        return str1;
+    }
+    // If str2 is longer than str1, swap the strings
+    else if (str2.length > str1.length) {
+        return gcdOfStrings(str2, str1);
+    }
+    // If str1 does not start with str2, return an empty string
+    else if (!str1.startsWith(str2)) {
+        return "";
+    }
+    // Recursively call gcdOfStrings with str1 trimmed by str2's length
+    else {
+        return gcdOfStrings(str1.substring(str2.length), str2);
+    }
+};
+
+
+
+/*
+
+TEST RUN: 
+str1 =
+"ABCABC"
+str2 =
+"ABC"
+
+Question Link: 
+https://leetcode.com/problems/greatest-common-divisor-of-strings/?envType=study-plan-v2&envId=leetcode-75
+
+
+What is this question asking? 
+It wants you to return the largest string "x" such that "x" divides both str1 and str2 and returns the largest string x such that x divides both str1 and str2.
+
+This means that given a string "str1" and "str2" you have: 
+
+-> str3 will be a substring that you can repeat to get str1 and str2
+
+ */ 
