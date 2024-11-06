@@ -31,8 +31,12 @@ var mergeTwoLists = function(list1, list2) {
     }
 
     // If there are remaining nodes in either list, append them
-    if (list1) current.next = list1;
-    if (list2) current.next = list2;
+    if (list1) {
+     current.next = list1;
+    } 
+    if (list2) {
+    current.next = list2;
+    }
 
     return dummyNode.next; // Return the merged list, skipping the dummy node
 };
