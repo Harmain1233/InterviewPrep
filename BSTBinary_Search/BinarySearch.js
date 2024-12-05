@@ -20,6 +20,7 @@
  * @param {number} target
  * @return {number}
  */
+
 var search = function(nums, target) {
     let right = nums.length - 1;
     let left = 0; 
